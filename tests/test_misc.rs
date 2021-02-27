@@ -197,6 +197,7 @@ pub fn test_op_rvc_srai_crash_32() {
 }
 
 #[test]
+#[cfg_attr(miri, ignore)] // too slow
 pub fn test_op_rvc_slli_crash_32() {
     let mut file = File::open("tests/programs/op_rvc_slli_crash_32").unwrap();
     let mut buffer = Vec::new();
